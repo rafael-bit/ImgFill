@@ -60,6 +60,42 @@ export default function SideBar() {
 					</ul>
 				</SignedIn>
 				<SignedOut>
+					<ul className="hidden w-full flex-col items-start gap-2 md:flex">
+						{navLinks.slice(0, 6).map((link) => {
+							const isActive = link.route === pathname;
+
+							return (
+								<li
+									key={link.route}
+									className={`flex gap-4 items-center px-6 p-2 font-semibold w-full whitespace-nowrap rounded-full bg-cover transition-all hover:bg-gray-900 hover:shadow-inner hover:text-gray-50 group ${isActive ? "bg-gray-800 text-gray-50" : "text-gray-900"
+										}`}
+								>
+									<Link href={link.route} className="flex gap-4 flex-center">
+										<Image src={link.icon} width={20} height={20} alt={link.label} className={`isActive && 'brightness-200' `} />
+										{link.label}
+									</Link>
+								</li>
+							);
+						})}
+					</ul>
+					<ul className="flex items-center justify-center w-full flex-col">
+						{navLinks.slice(6).map((link) => {
+							const isActive = link.route === pathname;
+
+							return (
+								<li
+									key={link.route}
+									className={`flex gap-4 items-center px-6 p-2 mt-1 font-semibold w-full whitespace-nowrap rounded-full bg-cover transition-all hover:bg-gray-900 hover:shadow-inner hover:text-gray-50 group ${isActive ? "bg-gray-800 text-gray-50" : "text-gray-900"
+										}`}
+								>
+									<Link href={link.route} className="flex gap-4 flex-center">
+										<Image src={link.icon} width={20} height={20} alt={link.label} className={`isActive && 'brightness-200' `} />
+										{link.label}
+									</Link>
+								</li>
+							);
+						})}
+					</ul>
 					<Button asChild>
 						<Link href="/sign-in">Login</Link>
 					</Button>

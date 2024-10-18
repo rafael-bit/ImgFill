@@ -1,3 +1,11 @@
+import Header from "@/app/components/Header";
+import { transformationTypes } from "@/app/constants";
+
 export default function update() {
-	return <div>update</div>;
+	return (
+		<Header
+			title="titletest"
+			subTitle="testsubtitle"
+		/>
+	)
 }

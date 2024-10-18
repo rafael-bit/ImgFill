@@ -34,7 +34,7 @@ export default function RootLayout({
         >
           <main className="flex min-h-screen w-full antialiased">
             <div className="flex-1 overflow-auto lg:max-h-screen">
-              <div className="flex max-w-5xl w-full">
+              <div className="lg:flex max-w-5xl w-full">
                 <SideBar />
                 <MobileBar />
                 {children}
