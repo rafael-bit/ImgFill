@@ -11,24 +11,23 @@ interface MongooseConnection {
 	promise: Promise<Mongoose> | null;
 }
 
-let cached: MongooseConnection = (global as any).mongoose;
+const cachedConnection: MongooseConnection = (globalThis as any).mongoose || { conn: null, promise: null };
 
-if (!cached) {
-	cached = (global as any).mongoose = { conn: null, promise: null };
-}
+(globalThis as any).mongoose = cachedConnection;
 
-export default async function connectToDatabase() {
-	if (cached.conn) {
-		return cached.conn;
+export default async function connectToDatabase(): Promise<Mongoose> {
+	if (cachedConnection.conn) {
+		return cachedConnection.conn;
 	}
 
-	if (!cached.promise) {
-		cached.promise = mongoose.connect(MONGODB_URL, {
+	if (!cachedConnection.promise) {
+		cachedConnection.promise = mongoose.connect(MONGODB_URL, {
 			dbName: "ImgFill",
 			bufferCommands: false,
-		}).then((mongoose) => mongoose);
+		});
 	}
 
-	cached.conn = await cached.promise;
-	return cached.conn;
+	cachedConnection.conn = await cachedConnection.promise;
+
+	return cachedConnection.conn;
 }

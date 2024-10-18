@@ -1,4 +1,4 @@
-import { model, models, Schema, Document, Types } from "mongoose";
+import { model, models, Schema, Document } from "mongoose";
 
 export interface IImage extends Document {
 	title: string;
@@ -13,10 +13,10 @@ export interface IImage extends Document {
 	color?: string;
 	prompt?: string;
 	author?: {
-		_id: String
-		fistName: String
-		lastName: String
-	}
+		_id: string;
+		fistName: string;
+		lastName: string;
+	};
 	createdAt?: Date;
 	updatedAt?: Date;
 }
@@ -36,6 +36,6 @@ const ImageSchema = new Schema({
 	author: { type: Schema.Types.ObjectId, ref: "User" },
 	createdAt: { type: Date, default: Date.now() },
 	updatedAt: { type: Date, default: Date.now() },
-})
+});
 
 export const Image = models?.Image || model("Image", ImageSchema);

@@ -1,10 +1,14 @@
-import { clsx, type ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
-export function handleError(error: any) {
-  console.error(error)
+export function handleError(error: unknown) {
+  if (error instanceof Error) {
+    console.error(error.message);
+  } else {
+    console.error("An unknown error occurred:", error);
+  }
 }
