@@ -19,7 +19,7 @@ export default function MobileBar() {
 	const pathname = usePathname();
 
 	return (
-		<header className="flex items-center gap-2 w-full justify-between">
+		<header className="md:hidden flex items-center gap-2 w-full justify-between">
 			<Link href="/" className="flex items-center">
 				<Image src="/imgFill.png" width={200} height={200} alt="Site Logo" />
 			</Link>
