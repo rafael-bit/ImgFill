@@ -4,6 +4,7 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import SideBar from "./components/Sidebar";
 import MobileBar from "./components/MobileBar";
+import { Toaster } from "@/components/ui/toaster";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,12 +33,15 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable}`}
         >
-          <main className="flex min-h-screen w-full antialiased">
+          <main className=" flex min-h-screen w-full antialiased">
             <div className="flex-1 overflow-auto lg:max-h-screen">
               <div className="lg:flex max-w-5xl w-full">
                 <SideBar />
                 <MobileBar />
-                {children}
+                <div className="md:ml-80">
+                  {children}
+                  <Toaster />
+                </div>
               </div>
             </div>
           </main> 

@@ -42,7 +42,7 @@ export default function MobileBar() {
 											className={`flex px-6 p-3 font-semibold w-full whitespace-nowrap rounded-full bg-cover transition-all hover:bg-gray-900 hover:shadow-inner hover:text-gray-50 group ${isActive ? "bg-gray-800 text-gray-50" : "text-gray-900"
 												}`}
 										>
-											<Link href={link.route} className="flex gap-4 flex-center">
+											<Link href={link.route} className="flex gap-4 items-center">
 												<Image src={link.icon} width={20} height={20} alt={link.label} className={`isActive && 'brightness-200' `} />
 												{link.label}
 											</Link>
@@ -75,7 +75,7 @@ export default function MobileBar() {
 											className={`flex px-6 p-3 font-semibold w-full whitespace-nowrap rounded-full bg-cover transition-all hover:bg-gray-900 hover:shadow-inner hover:text-gray-50 group ${isActive ? "bg-gray-800 text-gray-50" : "text-gray-900"
 												}`}
 										>
-											<Link href={link.route} className="flex gap-4 flex-center">
+											<Link href={link.route} className="flex gap-4 items-center">
 												<Image src={link.icon} width={20} height={20} alt={link.label} className={`isActive && 'brightness-200' `} />
 												{link.label}
 											</Link>

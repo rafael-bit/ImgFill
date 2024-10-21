@@ -11,7 +11,7 @@ export default function SideBar() {
 	const pathname = usePathname();
 
 	return (
-		<aside className="hidden h-screen w-72 bg-gray-50 p-5 shadow-md shadow-gray-200/50 md:flex flex-col">
+		<aside className="fixed hidden h-screen w-72 bg-gray-50 p-5 shadow-md shadow-gray-200/50 md:flex flex-col">
 			<div className="flex flex-col pb-10">
 				<Link href="/" className="flex items-center">
 					<Image src="/imgFill.png" width={200} height={200} alt="Site Logo" />
@@ -29,7 +29,7 @@ export default function SideBar() {
 									className={`flex gap-4 items-center px-6 p-2 font-semibold w-full whitespace-nowrap rounded-full bg-cover transition-all hover:bg-gray-900 hover:shadow-inner hover:text-gray-50 group ${isActive ? "bg-gray-800 text-gray-50" : "text-gray-900"
 										}`}
 								>
-									<Link href={link.route} className="flex gap-4 flex-center">
+									<Link href={link.route} className="flex gap-4">
 										<Image src={link.icon} width={20} height={20} alt={link.label} className={`isActive && 'brightness-200' `} />
 										{link.label}
 									</Link>
@@ -47,7 +47,7 @@ export default function SideBar() {
 									className={`flex gap-4 items-center px-6 p-2 mt-1 font-semibold w-full whitespace-nowrap rounded-full bg-cover transition-all hover:bg-gray-900 hover:shadow-inner hover:text-gray-50 group ${isActive ? "bg-gray-800 text-gray-50" : "text-gray-900"
 										}`}
 								>
-									<Link href={link.route} className="flex gap-4 flex-center">
+									<Link href={link.route} className="flex gap-4">
 										<Image src={link.icon} width={20} height={20} alt={link.label} className={`isActive && 'brightness-200' `} />
 										{link.label}
 									</Link>
@@ -70,7 +70,7 @@ export default function SideBar() {
 									className={`flex gap-4 items-center px-6 p-2 font-semibold w-full whitespace-nowrap rounded-full bg-cover transition-all hover:bg-gray-900 hover:shadow-inner hover:text-gray-50 group ${isActive ? "bg-gray-800 text-gray-50" : "text-gray-900"
 										}`}
 								>
-									<Link href={link.route} className="flex gap-4 flex-center">
+									<Link href={link.route} className="flex gap-4">
 										<Image src={link.icon} width={20} height={20} alt={link.label} className={`isActive && 'brightness-200' `} />
 										{link.label}
 									</Link>
@@ -88,7 +88,7 @@ export default function SideBar() {
 									className={`flex gap-4 items-center px-6 p-2 mt-1 font-semibold w-full whitespace-nowrap rounded-full bg-cover transition-all hover:bg-gray-900 hover:shadow-inner hover:text-gray-50 group ${isActive ? "bg-gray-800 text-gray-50" : "text-gray-900"
 										}`}
 								>
-									<Link href={link.route} className="flex gap-4 flex-center">
+									<Link href={link.route} className="flex gap-4">
 										<Image src={link.icon} width={20} height={20} alt={link.label} className={`isActive && 'brightness-200' `} />
 										{link.label}
 									</Link>

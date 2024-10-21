@@ -1,10 +1,10 @@
 export default function Header({ title, subTitle }: { title: string, subTitle?: string }) {
 	return (
-		<header className="p-16 mt-4">
-			<h2 className="h2-bold">
+		<header>
+			<h2 className="text-3xl font-bold">
 				{title}
 			</h2>
-			{subTitle && <p className="">
+			{subTitle && <p className="pt-2">
 				{subTitle}
 			</p>}
 		</header>
