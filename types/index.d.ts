@@ -55,7 +55,7 @@ declare type UpdateImageParams = {
   path: string;
 };
 
-declare type Transformation = {
+declare type Transformations = {
   restore?: boolean;
   fillBackground?: boolean;
   remove?: {
@@ -124,14 +124,14 @@ declare type TransformationFormProps = {
   type: TransformationTypeKey;
   creditBalance: number;
   data?: IImage | null;
-  config?: Transformation | null;
+  config?: Transformations | null;
 };
 
 declare type TransformedImageProps = {
   image: any;
   type: string;
   title: string;
-  transformationConfig: Transformation | null;
+  transformationConfig: Transformations | null;
   isTransforming: boolean;
   hasDownload?: boolean;
   setIsTransforming?: React.Dispatch<React.SetStateAction<boolean>>;
