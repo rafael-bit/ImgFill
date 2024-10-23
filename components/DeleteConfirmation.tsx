@@ -17,15 +17,19 @@ import { deleteImage } from "@/lib/actions/image.actions";
 
 import { Button } from "./ui/button";
 
-export default function DeleteConfirmation ({ imageId }: { imageId: string }) {
+interface DeleteConfirmationProps {
+  imageId: string;
+}
+
+export default function DeleteConfirmation({ imageId }: DeleteConfirmationProps) {
   const [isPending, startTransition] = useTransition();
 
   return (
     <AlertDialog>
-      <AlertDialogTrigger asChild className="w-full rounded-full">
+      <AlertDialogTrigger asChild>
         <Button
           type="button"
-          className="h-[44px] w-full md:h-[54px]"
+          className="h-12 w-full rounded-full"
           variant="destructive"
         >
           Delete Image
@@ -38,14 +42,14 @@ export default function DeleteConfirmation ({ imageId }: { imageId: string }) {
             Are you sure you want to delete this image?
           </AlertDialogTitle>
           <AlertDialogDescription className="p-16-regular">
-            This will permanently delete this image
+            This action cannot be undone.
           </AlertDialogDescription>
         </AlertDialogHeader>
 
         <AlertDialogFooter>
           <AlertDialogCancel>Cancel</AlertDialogCancel>
           <AlertDialogAction
-            className="border bg-red-500 text-white hover:bg-red-600"
+            className="bg-red-500 text-white hover:bg-red-600"
             onClick={() =>
               startTransition(async () => {
                 await deleteImage(imageId);
@@ -58,4 +62,4 @@ export default function DeleteConfirmation ({ imageId }: { imageId: string }) {
       </AlertDialogContent>
     </AlertDialog>
   );
-};
+}

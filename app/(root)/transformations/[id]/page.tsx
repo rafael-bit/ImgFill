@@ -7,7 +7,7 @@ import TransformedImage from "@/components/TransformedImage";
 import { Button } from "@/components/ui/button";
 import { getImageById } from "@/lib/actions/image.actions";
 import { getImageSize } from "@/lib/utils";
-import { DeleteConfirmation } from "@/components/DeleteConfirmation";
+import DeleteConfirmation from "@/components/DeleteConfirmation";
 
 export default async function ImageDetails ({ params: { id } }: SearchParamProps) {
   const { userId } = auth();
