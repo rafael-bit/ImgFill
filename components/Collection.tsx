@@ -48,9 +48,11 @@ export const Collection = ({
 
   return (
     <>
-      <div className="md:flex-between mb-6 flex flex-col gap-5 md:flex-row">
+      <div className="md:justify-between mb-6 flex flex-col gap-5 md:flex-row">
         <h2 className="text-5xl font-bold text-gray-800">Recent Edits</h2>
-        {hasSearch && <Search />}
+        <div className="md:mr-5">
+          {hasSearch && <Search />}
+        </div>
       </div>
 
       {images.length > 0 ? (
@@ -60,7 +62,7 @@ export const Collection = ({
           ))}
         </ul>
       ) : (
-          <div className="flex-center h-60 w-full rounded-[10px] border border-dark-400/10 bg-white/20">
+        <div className="flex-center h-60 w-full rounded-[10px] border border-dark-400/10 bg-white/20">
           <p className="p-16">Empty List</p>
         </div>
       )}
@@ -70,7 +72,7 @@ export const Collection = ({
           <PaginationContent className="flex w-full">
             <Button
               disabled={Number(page) <= 1}
-              className="button w-32 text-white"
+              className="w-32 text-white"
               onClick={() => onPageChange("prev")}
             >
               <PaginationPrevious className="hover:bg-transparent hover:text-white" />
@@ -81,7 +83,7 @@ export const Collection = ({
             </p>
 
             <Button
-              className="button w-32 text-white"
+              className="w-32 text-white"
               onClick={() => onPageChange("next")}
               disabled={Number(page) >= totalPages}
             >
@@ -109,13 +111,13 @@ const Card = ({ image }: { image: IImage }) => {
           sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
         />
         <div className="flex-between">
-          <p className="p-20-semibold mr-3 line-clamp-1 text-gray-700">
+          <p className="text-xl font-semibold mr-3 line-clamp-1 text-gray-700">
             {image.title}
           </p>
           <Image
             src={`/icons/${transformationTypes[
-                image.transformationType as TransformationTypeKey
-              ].icon
+              image.transformationType as TransformationTypeKey
+            ].icon
               }`}
             alt={image.title}
             width={24}

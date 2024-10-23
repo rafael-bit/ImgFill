@@ -82,7 +82,7 @@ export default function MediaUploader ({
               </div>
             </>
           ) : (
-              <div className="flex-center flex h-72 cursor-pointer flex-col gap-5 rounded-[16px] border border-dashed bg-purple-100/20 shadow-inner" onClick={() => open()}>
+              <div className="flex-center flex h-72 cursor-pointer flex-col gap-5 rounded-[16px] border border-dashed bg-gray-100/20 shadow-inner" onClick={() => open()}>
                 <div className="rounded-sm bg-white  p-5 shadow-sm">
                 <Image
                   src="/icons/add.svg"

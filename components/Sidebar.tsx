@@ -70,7 +70,7 @@ export default function Sidebar() {
           </SignedIn>
 
           <SignedOut>
-            <Button asChild className="button bg-purple-gradient bg-cover">
+            <Button asChild>
               <Link href="/sign-in">Login</Link>
             </Button>
           </SignedOut>

@@ -37,7 +37,7 @@ export default function TransformedImage ({ image, type, title, transformationCo
             alt={image.title}
             sizes={"(max-width: 767px) 100vw, 50vw"}
             placeholder={dataUrl as PlaceholderValue}
-            className="transformed-image"
+            className="h-fit min-h-72 w-full rounded-[10px] border border-dashed bg-gray-100/20 object-cover p-2"
             onLoad={() => {
               setIsLoaded(true)
               setIsTransforming && setIsTransforming(false);

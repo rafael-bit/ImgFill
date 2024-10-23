@@ -77,7 +77,7 @@ export default function MobileNav() {
         </SignedIn>
 
         <SignedOut>
-          <Button asChild className="button bg-gray-800">
+          <Button asChild className="bg-gray-800">
             <Link href="/sign-in">Login</Link>
           </Button>
         </SignedOut>

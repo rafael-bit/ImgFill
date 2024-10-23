@@ -17,7 +17,7 @@ import { deleteImage } from "@/lib/actions/image.actions";
 
 import { Button } from "./ui/button";
 
-export const DeleteConfirmation = ({ imageId }: { imageId: string }) => {
+export default function DeleteConfirmation ({ imageId }: { imageId: string }) {
   const [isPending, startTransition] = useTransition();
 
   return (
@@ -25,7 +25,7 @@ export const DeleteConfirmation = ({ imageId }: { imageId: string }) => {
       <AlertDialogTrigger asChild className="w-full rounded-full">
         <Button
           type="button"
-          className="button h-[44px] w-full md:h-[54px]"
+          className="h-[44px] w-full md:h-[54px]"
           variant="destructive"
         >
           Delete Image

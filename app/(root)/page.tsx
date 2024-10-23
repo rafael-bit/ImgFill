@@ -1,10 +1,10 @@
 import { Collection } from "@/components/Collection"
-import { navLinks } from "@/constants"
+import { BlacknavLinks } from "@/constants"
 import { getAllImages } from "@/lib/actions/image.actions"
 import Image from "next/image"
 import Link from "next/link"
 
-const Home = async ({ searchParams }: SearchParamProps) => {
+export default async function Home ({ searchParams }: SearchParamProps) {
   const page = Number(searchParams?.page) || 1;
   const searchQuery = (searchParams?.query as string) || '';
 
@@ -12,12 +12,12 @@ const Home = async ({ searchParams }: SearchParamProps) => {
 
   return (
     <>
-      <section className="home">
-        <h1 className="home-heading">
-          Unleash Your Creative Vision with ImgFill
+      <section className="sm:flex-center hidden h-72 flex-col gap-4 rounded-lg border bg-banner bg-cover bg-no-repeat p-10 shadow-inner bg-gray-800 md:mr-5">
+        <h1 className="text-5xl font-bold max-w-[500px] flex-wrap text-center text-white shadow-sm">
+          Ignite Your Creative Vision with ImgFill
         </h1>
         <ul className="flex-center w-full gap-20">
-          {navLinks.slice(1, 5).map((link) => (
+          {BlacknavLinks.slice(1, 5).map((link) => (
             <Link
               key={link.route}
               href={link.route}
@@ -32,7 +32,7 @@ const Home = async ({ searchParams }: SearchParamProps) => {
         </ul>
       </section>
 
-      <section className="sm:mt-12">
+      <section className="sm:mt-7">
         <Collection
           hasSearch={true}
           images={images?.data}
@@ -43,5 +43,3 @@ const Home = async ({ searchParams }: SearchParamProps) => {
     </>
   )
 }
-
-export default Home

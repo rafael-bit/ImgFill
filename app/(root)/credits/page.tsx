@@ -31,7 +31,7 @@ export default async function Credits () {
                 <p className="p-5 mt-2 text-gray-800">
                   {plan.name}
                 </p>
-                <p className="h1-semibold text-dark-600">${plan.price}</p>
+                <p className="text-2xl font-bold text-dark-600">${plan.price}</p>
                 <p className="p-16-regular">{plan.credits}Credits</p>
               </div>
 

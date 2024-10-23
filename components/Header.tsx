@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Header = ({ title, subtitle }: { title: string, subtitle?: string }) => {
+export default function Header ({ title, subtitle }: { title: string, subtitle?: string }) {
   return (
     <>
       <h1 className="text-4xl font-bold text-gray-700">{title}</h1>
@@ -8,5 +8,3 @@ const Header = ({ title, subtitle }: { title: string, subtitle?: string }) => {
     </>
   )
 }
-
-export default Header

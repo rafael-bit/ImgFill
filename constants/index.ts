@@ -1,3 +1,31 @@
+export const BlacknavLinks = [
+  {
+    label: "Image Restore",
+    route: "/transformations/add/restore",
+    icon: "/icons/black-image.svg",
+  },
+  {
+    label: "Generative Fill",
+    route: "/transformations/add/fill",
+    icon: "/icons/black-stars.svg",
+  },
+  {
+    label: "Object Remove",
+    route: "/transformations/add/remove",
+    icon: "/icons/black-scan.svg",
+  },
+  {
+    label: "Object Recolor",
+    route: "/transformations/add/recolor",
+    icon: "/icons/black-filter.svg",
+  },
+  {
+    label: "Background Remove",
+    route: "/transformations/add/removeBackground",
+    icon: "/icons/black-camera.svg",
+  }
+];
+
 export const navLinks = [
   {
     label: "Home",

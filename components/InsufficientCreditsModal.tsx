@@ -14,7 +14,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 
-export const InsufficientCreditsModal = () => {
+export default function InsufficientCreditsModal () {
   const router = useRouter();
 
   return (
@@ -44,7 +44,7 @@ export const InsufficientCreditsModal = () => {
             height={122}
           />
 
-          <AlertDialogTitle className="p-24-bold text-dark-600">
+          <AlertDialogTitle className="text-2xl font-bold text-dark-600">
             Oops.... Looks like you&#39;ve run out of free credits!
           </AlertDialogTitle>
 
@@ -55,13 +55,13 @@ export const InsufficientCreditsModal = () => {
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel
-            className="button w-full bg-purple-100 text-dark-400"
+            className="w-full bg-gray-100 text-gray-600"
             onClick={() => router.push("/profile")}
           >
             No, Cancel
           </AlertDialogCancel>
           <AlertDialogAction
-            className="button w-full bg-purple-gradient  bg-cover"
+            className="w-full"
             onClick={() => router.push("/credits")}
           >
             Yes, Proceed
