@@ -38,7 +38,7 @@ Open this address in your browser: [http://localhost:3000](http://localhost:3000
 
 # 💻 Technologies
 
-[Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), AI models for image processing, and more tools to bring advanced image manipulation capabilities.
+[Next.js](https://nextjs.org/), [Clerk](https://clerk.com/), [Cloudinary](https://cloudinary.com/), [Prisma](https://www.prisma.io/), [Tailwind CSS](https://tailwindcss.com/) e outros AI models for image processing and others.
 
 #  🚩 Bugs
 
